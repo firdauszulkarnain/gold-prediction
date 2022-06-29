@@ -7,7 +7,7 @@
 
 <section class="content mt-5">
     <div class="row d-fle justify-content-center">
-        <div class="col-lg-9">
+        <div class="col-lg-8">
             <div class="card">
                 <div class="card-body p-5">
                     <h3 class="text-center">Website Prediksi Harga Emas</h3>
