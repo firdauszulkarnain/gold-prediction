@@ -9,7 +9,7 @@
     <div class="row d-fle justify-content-center">
         <div class="col-lg-8">
             <div class="card">
-                <div class="card-header bg-warning font-weight-bolder text-center" style="font-size: 24px !important;">
+                <div class="card-header bg-warning font-weight-bolder text-center my-font" style="font-size: 24px !important;">
                     Masukan Data Emas Yang Ingin Diprediksi
                 </div>
                 <div class="card-body px-3 py-2">

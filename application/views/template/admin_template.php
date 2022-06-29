@@ -8,7 +8,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/adminlte.min.css">
     <!-- DATATABLE -->
@@ -42,9 +41,6 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="<?= base_url() ?>prediction" class="nav-link my-font text-dark bg-warning"> <i class="fas fa-fw fa-wave-square"></i> Prediksi Harga Emas</a>
-                </li>
             </ul>
 
             <!-- Right navbar links -->
@@ -73,7 +69,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item mt-2">
-                            <a href="<?= base_url() ?>dashboard" class="nav-link <?= $this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == ''   ? "active" : "" ?>">
+                            <a href="<?= base_url() ?>admin/dashboard" class="nav-link <?= $this->uri->segment(1) == 'admin' &&  $this->uri->segment(2) == 'dashboard'  ? "active" : "" ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -81,26 +77,10 @@
                             </a>
                         </li>
                         <li class="nav-item mt-2">
-                            <a href="<?= base_url() ?>prediction" class="nav-link <?= $this->uri->segment(1) == 'prediction'  ? "active" : "" ?>">
-                                <i class="nav-icon fas fa-wave-square"></i>
-                                <p>
-                                    Prediction
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-2">
-                            <a href="<?= base_url() ?>emas" class="nav-link <?= $this->uri->segment(1) == 'emas'  ? "active" : "" ?>">
+                            <a href="<?= base_url() ?>admin/emas" class="nav-link <?= $this->uri->segment(1) == 'admin' &&  $this->uri->segment(2) == 'emas'  ? "active" : "" ?>">
                                 <i class="nav-icon fas fa-stop-circle"></i>
                                 <p>
                                     Data Harga Emas
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-2">
-                            <a href="<?= base_url() ?>about" class="nav-link <?= $this->uri->segment(1) == 'about'  ? "active" : "" ?>">
-                                <i class="nav-icon fas fa-question-circle"></i>
-                                <p>
-                                    About
                                 </p>
                             </a>
                         </li>

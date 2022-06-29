@@ -21,14 +21,46 @@ class Admin extends CI_Controller
     {
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
         $data['title'] = 'Dashboard';
-        $this->template->load('template/template', 'admin/dashboard', $data);
+        $this->template->load('template/admin_template', 'admin/dashboard', $data);
+    }
+
+    public function emas()
+    {
+        $data['title'] = 'Data Harga Emas';
+        $this->template->load('template/admin_template', 'admin/emas', $data);
+    }
+
+
+    function get_data_gold()
+    {
+        $list = $this->Emas_Model->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $field) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $field->date;
+            $row[] = $field->price;
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Emas_Model->count_all(),
+            "recordsFiltered" => $this->Emas_Model->count_filtered(),
+            "data" => $data,
+        );
+        //output dalam format JSON
+        echo json_encode($output);
     }
 
     public function profile()
     {
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
         $data['title'] = 'Profil Admin';
-        $this->template->load('template/template', 'admin/profile/index', $data);
+        $this->template->load('template/admin_template', 'admin/profile/index', $data);
     }
 
     public function ganti_password()

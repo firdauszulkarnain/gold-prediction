@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between ">
             <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
-            <a class="btn btn-sm btn-warning font-weight-bolder px-5 py-2" href="<?= base_url() ?>emas/cetak"><i class="fas fa-fw fa-file-alt"></i> Cetak </a>
+            <a class="btn btn-sm btn-success px-4 py-2" href="<?= base_url() ?>buku/tambah_buku"><i class="fas fa-fw fa-plus"></i> Tambah Data Harga Emas </a>
         </div>
     </div>
 </section>
