@@ -6,7 +6,7 @@ class Emas_model extends CI_Model
     var $table = 'tbl_gold';
     var $column_order = array(null, 'date', 'price');
     var $column_search = array('date', 'price');
-    var $order = array('id_gold' => 'asc');
+    var $order = array('id_gold' => 'desc');
 
     private function _get_datatables_query()
     {

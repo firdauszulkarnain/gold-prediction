@@ -5,7 +5,7 @@ class Emas extends CI_Controller
 {
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Data Harga Emas';
         $this->template->load('template/template', 'emas', $data);
     }
 

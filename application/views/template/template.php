@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Blank Page</title>
+    <title><?= $title ?> | Sistem Prediksi Harga Emas</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li class="nav-item mt-2">
-                            <a href="<?= base_url() ?>emas" class="nav-link <?= $this->uri->segment(1) == 'harga'  ? "active" : "" ?>">
+                            <a href="<?= base_url() ?>emas" class="nav-link <?= $this->uri->segment(1) == 'emas'  ? "active" : "" ?>">
                                 <i class="nav-icon fas fa-stop-circle"></i>
                                 <p>
                                     Data Harga Emas

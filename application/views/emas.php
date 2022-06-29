@@ -1,19 +1,21 @@
 <section class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="d-sm-flex align-items-center justify-content-between ">
+            <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
+            <a class="btn btn-sm btn-success px-4 py-2" href="<?= base_url() ?>buku/tambah_buku"><i class="fas fa-fw fa-plus"></i> Cetak </a>
         </div>
     </div>
 </section>
 
-<section class="content mt-5">
+<section class="content">
     <div class="row d-fle justify-content-center">
         <div class="col-lg-10">
             <div class="card">
                 <div class="card-body">
-                    <table id="table" class="display" cellspacing="0" width="100%">
+                    <table class="table table-striped table-bordered dt-responsive nowrap display" id="table" width="100%">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th width="10%">No</th>
                                 <th>Tanggal</th>
                                 <th>Harga Emas</th>
                             </tr>
@@ -45,7 +47,7 @@
 
 
             "columnDefs": [{
-                "targets": [0],
+                "targets": [0, 1, 2],
                 "orderable": false,
             }, ],
 
