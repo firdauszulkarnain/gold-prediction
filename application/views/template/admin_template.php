@@ -29,6 +29,8 @@
     <script src="<?= base_url() ?>assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <!-- DATEPICKER -->
     <script src="<?= base_url() ?>assets/js/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <!-- SWEETALERT2 -->
+    <script src="<?= base_url() ?>assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -48,6 +50,11 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-toggle="modal" data-target="#logoutModal" class="nav-link">
+                        <i class="bg- fas fa-sign-out-alt"></i>
                     </a>
                 </li>
             </ul>
@@ -136,8 +143,7 @@
 
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>assets/js/adminlte.min.js"></script>
-    <!-- SWEETALERT2 -->
-    <script src="<?= base_url() ?>assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+
     <!-- SELECT PICKER -->
     <script src="<?= base_url() ?>assets/js/bootstrap-select/bootstrap-select.js"></script>
     <script src="<?= base_url('assets/js/select/defaults-id_ID.min.js') ?>"></script>

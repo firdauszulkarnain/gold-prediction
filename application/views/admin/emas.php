@@ -32,7 +32,6 @@
     </div>
 </section>
 
-<!-- Ongkir Modal -->
 <div class="modal fade mt-5" id="updateModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -42,7 +41,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url() ?>ongkir/update_ongkir" method="POST">
+            <form action="<?= base_url() ?>admin/update_emas" method="POST">
                 <div class="modal-body">
                     <input type="hidden" name="id_gold" id="id_gold" value="">
                     <div class="form-group">
@@ -55,14 +54,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning font-weight-bolder btn-sm btn px-4 py-2">Simpan Data Ongkir</button>
+                    <button type="submit" class="btn btn-warning font-weight-bolder">Simpan Data Harga</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Tambah Kategori Modal-->
 <div class="modal fade" id="tambahModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -109,7 +107,7 @@
 
 
             "columnDefs": [{
-                "targets": [0, 1, 2],
+                "targets": [0, 1, 2, 3],
                 "orderable": false,
             }, ],
 
@@ -123,6 +121,26 @@
             $("#updateModal .modal-body #date").val(date);
             $("#updateModal .modal-body #price").val(price);
         });
+
+
+        function tombol_hapus() {
+            e.preventDefault();
+            const href = $(this).attr('href');
+            Swal.fire({
+                title: 'Yakin Hapus Data',
+                text: "",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus Data!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.location.href = href;
+                }
+            })
+        }
+
 
     });
 </script>

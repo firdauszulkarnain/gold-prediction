@@ -42,7 +42,7 @@ class Admin extends CI_Controller
             $row[] = $no;
             $row[] = $field->date;
             $row[] = $field->price;
-            $row[] = '<a href="#" data-id="' . $field->id_gold . '"  data-date="' . $field->date . '" data-price="' . $field->price . '" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-info text-light modal_update"><i class="fas fa-fw fa-edit"></i></a>';
+            $row[] = '<a href="#" data-id="' . $field->id_gold . '"  data-date="' . $field->date . '" data-price="' . $field->price . '" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-info text-light modal_update"><i class="fas fa-fw fa-edit"></i></a> <a href="' . base_url() . 'admin/hapus_emas/' . $field->id_gold . '" class="btn btn-sm btn-danger text-light tombol-hapus" return confirm("Yakin Hapus?")><i class="fas fa-fw fa-trash-alt"></i></a>';
 
             $data[] = $row;
         }
@@ -66,12 +66,30 @@ class Admin extends CI_Controller
         redirect('admin/emas');
     }
 
+    public function update_emas()
+    {
+        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
+        $this->Data_Model->update_emas();
+        $this->session->set_flashdata('pesan', 'Update Data Harga Emas');
+        redirect('admin/emas');
+    }
+
+    public function hapus_emas($id_gold)
+    {
+        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
+        $this->Data_Model->hapus_emas($id_gold);
+        $this->session->set_flashdata('pesan', 'Hapus Data Emas');
+        redirect('admin/emas');
+    }
+
     public function profile()
     {
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
         $data['title'] = 'Profil Admin';
         $this->template->load('template/admin_template', 'admin/profile/index', $data);
     }
+
+
 
     public function ganti_password()
     {

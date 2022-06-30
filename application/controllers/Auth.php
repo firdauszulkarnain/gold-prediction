@@ -49,6 +49,6 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('admin');
         $this->session->set_flashdata('pesan', 'Logout Aplikasi');
-        redirect('auth/login');
+        redirect('/');
     }
 }

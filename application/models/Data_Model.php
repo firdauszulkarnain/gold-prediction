@@ -14,21 +14,19 @@ class Data_Model extends CI_Model
         $this->db->insert('tbl_gold', $data);
     }
 
-    public function update_gold()
+    public function update_emas()
     {
         $id_gold = $this->input->post('id_gold');
         $data = [
             'price' => htmlspecialchars($this->input->post('price')),
         ];
-
         $this->db->where('id_gold', $id_gold);
         $this->db->update('tbl_gold', $data);
     }
 
-    public function hapus_kategori()
+    public function hapus_emas($id_gold)
     {
-        $id_kategori = $this->input->post('id_kategori');
-        $this->db->where('id_kategori', $id_kategori);
-        $this->db->delete('kategori');
+        $this->db->where('id_gold', $id_gold);
+        $this->db->delete('tbl_gold');
     }
 }

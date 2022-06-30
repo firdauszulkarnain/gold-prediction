@@ -21,7 +21,6 @@ class Emas extends CI_Controller
             $row[] = $no;
             $row[] = $field->date;
             $row[] = $field->price;
-            $row[] = '<button type="button" class="btn btn-primary">Primary</button>';
 
             $data[] = $row;
         }
