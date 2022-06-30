@@ -47,9 +47,14 @@
 
 
             "columnDefs": [{
-                "targets": [0, 1, 2],
-                "orderable": false,
-            }, ],
+                    "targets": [0, 1, 2],
+                    "orderable": false,
+                },
+                {
+                    "className": "text-center",
+                    "targets": "_all"
+                }
+            ],
 
         });
 

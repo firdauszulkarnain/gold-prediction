@@ -109,7 +109,10 @@
             "columnDefs": [{
                 "targets": [0, 1, 2, 3],
                 "orderable": false,
-            }, ],
+            }, {
+                "className": "text-center",
+                "targets": "_all"
+            }],
 
         });
 

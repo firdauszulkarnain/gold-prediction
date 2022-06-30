@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/auth.css">
 </head>
 
-<body class="bg-warning">
+<body style="background-color: #F0A500;">
     <div class="container">
         <div class="row mt-5 d-flex justify-content-center">
             <div class="login-box mt-5" style="opacity: 0.95 !important;">
