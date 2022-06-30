@@ -18,6 +18,7 @@
                                 <th width="10%">No</th>
                                 <th>Tanggal</th>
                                 <th>Harga Emas</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

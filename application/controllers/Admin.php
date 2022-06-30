@@ -42,6 +42,7 @@ class Admin extends CI_Controller
             $row[] = $no;
             $row[] = $field->date;
             $row[] = $field->price;
+            $row[] = '<a href="#" data-id="' . $field->id_gold . '"  data-date="' . $field->date . '" data-price="' . $field->price . '" data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-info text-light modal_update"><i class="fas fa-fw fa-edit"></i></a>';
 
             $data[] = $row;
         }
@@ -54,6 +55,15 @@ class Admin extends CI_Controller
         );
         //output dalam format JSON
         echo json_encode($output);
+    }
+
+
+    public function tambah_emas()
+    {
+        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
+        $this->Data_Model->tambah_emas();
+        $this->session->set_flashdata('pesan', 'Tambah Data Harga Emas');
+        redirect('admin/emas');
     }
 
     public function profile()
