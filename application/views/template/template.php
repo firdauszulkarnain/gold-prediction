@@ -163,6 +163,8 @@
     <script src="<?= base_url('assets/js/select/defaults-id_ID.min.js') ?>"></script>
     <!-- JQUERY MASKING Money -->
     <script src="<?= base_url() ?>assets/js/jquery-mask/jquery.mask.js"></script>
+    <!-- Chart JS -->
+    <script src="<?= base_url() ?>assets/plugins/chart.js/Chart.min.js"></script>
 
     <!-- FileStyle -->
     <script type="text/javascript" src="<?= base_url() ?>assets/js/bootstrap-filestyle/bootstrap-filestyle.min.js"> </script>
