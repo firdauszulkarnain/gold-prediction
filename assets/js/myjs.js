@@ -15,7 +15,7 @@ $(document).ready(function() {
    
 
 
-    $('.uang').mask('000.000.000.000', {
+    $('.uang').mask('000000000000', {
         reverse: true
       });
 
