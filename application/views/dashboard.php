@@ -48,7 +48,21 @@
 
                         ?>
                     ]
-                }]
+                }, {
+                    label: ['Harga Prediksi'],
+                    fill: false,
+                    borderColor: 'blue',
+                    data: [
+                        <?php
+                        if (count($prediksi) > 0) {
+                            for ($i = 0; $i < count($prediksi); $i++) {
+                                echo $prediksi[$i] . ", ";
+                            }
+                        }
+
+                        ?>
+                    ]
+                }, ]
             },
             options: {
                 scales: {

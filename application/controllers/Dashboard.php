@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
             $number = (float) $nilai;
             $prediksi[] = $number;
         }
+        $data['prediksi'] = $prediksi;
         $data['status'] = $this->db->query($query)->result();
         $this->template->load('template/template', 'dashboard', $data);
     }
