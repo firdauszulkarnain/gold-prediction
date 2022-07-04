@@ -17,31 +17,32 @@
         </div>
     </div>
 </section>
-
 <script>
     $(document).ready(function() {
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'line',
+
             data: {
                 labels: [
                     <?php
                     if (count($status) > 0) {
                         foreach ($status as $data) {
-                            echo "'" . $data->status . "',";
+                            echo "'" . $data->tahun . "',";
                         }
                     }
 
                     ?>
                 ],
                 datasets: [{
-                    label: 'Jumlah Pesan',
-                    backgroundColor: ['#ffcd56', '#ff6a56', '#36a2eb'],
+                    label: ['Harga Aktual'],
+                    fill: false,
+                    borderColor: '#ffcd56',
                     data: [
                         <?php
                         if (count($status) > 0) {
                             foreach ($status as $data) {
-                                echo $data->jumlah . ", ";
+                                echo $data->harga_aktual . ", ";
                             }
                         }
 
@@ -49,6 +50,19 @@
                     ]
                 }]
             },
+            options: {
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            min: 5000, // minimum value
+                            max: 50000, // maximum value,
+                            stepSize: 5000
+                        }
+                    }]
+                }
+            }
+
         });
     });
 </script>
