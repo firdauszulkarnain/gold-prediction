@@ -38,7 +38,7 @@
             <?php if ($prediction != NULL) : ?>
                 <div class="card">
                     <div class="card-body p-5">
-                        <a class="btn btn-sm btn-warning font-weight-bolder px-5 py-2 mb-3" href="<?= base_url() ?>prediction/cetak"><i class="fas fa-fw fa-file-alt"></i> Cetak </a>
+                        <a class="btn btn-sm btn-warning font-weight-bolder px-5 py-2 mb-3" href="<?= base_url() ?>prediction/cetak/<?= $x1 ?>/<?= $x2 ?>"><i class="fas fa-fw fa-file-alt"></i> Cetak </a>
                         <table class="table table-striped table-bordered">
                             <tbody>
                                 <?php for ($i = 0; $i < count($prediction); $i++) : ?>

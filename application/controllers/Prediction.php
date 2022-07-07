@@ -14,6 +14,8 @@ class Prediction extends CI_Controller
 
         if ($x1 != NULL && $x2 !== NULL) {
             $data['prediction'] = $this->Data_Model->data_prediksi();
+            $data['x1'] = $x1;
+            $data['x2'] = $x2;
         } else {
             $data['prediction'] = NULL;
         }
@@ -22,7 +24,7 @@ class Prediction extends CI_Controller
     }
 
 
-    public function cetak()
+    public function cetak($x1, $x2)
     {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
@@ -30,20 +32,14 @@ class Prediction extends CI_Controller
         $sheet->setCellValue('B1', 'Prediksi Hari');
         $sheet->setCellValue('C1', 'Harga Emas');
 
-        $prediction = $this->Data_Model->data_prediksi();
-        $prediksi = [];
-        for ($i = 0; $i < count($prediction); $i++) {
-            $nilai = str_replace(".", ",", $prediction[$i]);
-            $isi = (string) $nilai;
-            $prediksi[] = $isi;
-        }
+        $prediction = $this->Data_Model->data_cetak($x1, $x2);
         $no = 1;
         $hari = 1;
         $x = 2;
-        for ($i = 0; $i < count($prediksi); $i++) {
+        for ($i = 0; $i < count($prediction); $i++) {
             $sheet->setCellValue('A' . $x, $no++);
             $sheet->setCellValue('B' . $x, 'Prediksi Hari ' . $hari);
-            $sheet->setCellValue('C' . $x, $prediksi[$i]);
+            $sheet->setCellValue('C' . $x, $prediction[$i]);
             $x++;
             $hari++;
         }
