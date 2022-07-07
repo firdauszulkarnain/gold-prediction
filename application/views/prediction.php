@@ -38,28 +38,15 @@
             <?php if ($prediction != NULL) : ?>
                 <div class="card">
                     <div class="card-body p-5">
+                        <a class="btn btn-sm btn-warning font-weight-bolder px-5 py-2 mb-3" href="<?= base_url() ?>prediction/cetak"><i class="fas fa-fw fa-file-alt"></i> Cetak </a>
                         <table class="table table-striped table-bordered">
                             <tbody>
-                                <tr>
-                                    <th width="40%">Prediksi Hari 1</th>
-                                    <td><?= $prediction['y1'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th width="40%">Prediksi Hari 2</th>
-                                    <td><?= $prediction['y2'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th width="40%">Prediksi Hari 3</th>
-                                    <td><?= $prediction['y3'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th width="40%">Prediksi Hari 4</th>
-                                    <td><?= $prediction['y4'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th width="40%">Prediksi Hari 5</th>
-                                    <td><?= $prediction['y5'] ?></td>
-                                </tr>
+                                <?php for ($i = 0; $i < count($prediction); $i++) : ?>
+                                    <tr>
+                                        <th width="40%">Prediksi Hari <?= $i + 1 ?></th>
+                                        <td><?= $prediction[$i] ?></td>
+                                    </tr>
+                                <?php endfor ?>
                             </tbody>
                         </table>
                     </div>
