@@ -71,4 +71,16 @@ class Data_Model extends CI_Model
         ];
         return $data;
     }
+
+    public function status()
+    {
+        $query = "SELECT harga_aktual, tahun FROM tbl_grafik GROUP BY tahun";
+        return $this->db->query($query)->result();
+    }
+
+    public function prediksi()
+    {
+        $query = "SELECT hasil_prediksi, tahun FROM tbl_grafik GROUP BY tahun";
+        return $this->db->query($query)->result();
+    }
 }
